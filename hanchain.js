@@ -10,7 +10,7 @@ class Block{
     }
 
     getHash() {
-        return SHA256(JSON.stringify(this.data) + this.timestamp + this.prevHash);
+        return SHA256(JSON.stringify(this.data) + this.timestamp + this.prevHash + this.nonce);
     }
     mine(difficulty){
         while(!this.hash.startsWith(Array(difficulty + 1).join("0"))){
